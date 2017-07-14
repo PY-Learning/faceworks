@@ -1,0 +1,5 @@
+flask
+sqlalchemy
+flask_login
+Flask-SQLAlchemy
+click

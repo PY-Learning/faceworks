@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>谢谢你完成了所有的评分！</h1>
+        <div>
+            全局进度 {{ (sys_process[0] - sys_process[1]) * 100 / sys_process[0] }}%
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: {{ (sys_process[0] - sys_process[1]) * 100 / sys_process[0] }}%;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

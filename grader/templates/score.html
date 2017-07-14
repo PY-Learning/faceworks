@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #eee;
+        }
+
+        div.container {
+            max-width: 600px;
+        }
+
+        img#girl-image {
+            max-height: 300px;
+            width: auto;
+            height: 300px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        div.container div.row {
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+
+        <div class="row">
+            <h1 style="text-align:center">给出你的分数</h1>
+            <img id="girl-image" class="img-responsive" src="{{ image_url }}" alt="">
+        </div>
+        <div class="row">
+            <form method="post">
+                <div>
+                    <label class="radio-inline"><input type="radio" name="score" id="inlineRadio1" value="1">1</label>
+                    <label class="radio-inline"><input type="radio" name="score" id="inlineRadio2" value="2">2</label>
+                    <label class="radio-inline"><input type="radio" name="score" id="inlineRadio3" value="3">3</label>
+                    <label class="radio-inline"><input type="radio" name="score" id="inlineRadio4" value="4">4</label>
+                    <label class="radio-inline"><input type="radio" name="score" id="inlineRadio5" value="5">5</label>
+                    <label class="radio-inline"><input type="radio" name="score" id="inlineRadio6" value="6">6</label>
+                    <label class="radio-inline"><input type="radio" name="score" id="inlineRadio7" value="7">7</label>
+                    <label class="radio-inline"><input type="radio" name="score" id="inlineRadio8" value="8">8</label>
+                    <label class="radio-inline"><input type="radio" name="score" id="inlineRadio9" value="9">9</label>
+                    <label class="radio-inline"><input type="radio" name="score" id="inlineRadio10" value="9">10</label>
+                    <label class="radio-inline"><input type="radio" name="score" id="inlineRadioNone" value="-1">有问题</label>
+                </div>
+
+                <br>
+                <input class="btn btn-lg btn-primary btn-block" type="submit" value="提交">
+            </form>
+        </div>
+        <div class="row">
+
+            <div class="col-xs-6">
+                全局进度 {{ (sys_process[0] - sys_process[1]) * 100 / sys_process[0] }}%
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: {{ (sys_process[0] - sys_process[1]) * 100 / sys_process[0] }}%;">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                你的进度 {{ (user_process[0] - user_process[1]) * 100 / user_process[0] }}%
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: {{ (user_process[0] - user_process[1]) * 100 / user_process[0] }}%;">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
