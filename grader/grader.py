@@ -15,11 +15,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
 from functools import wraps
 
-engine = create_engine('sqlite:///test.db', convert_unicode=True)
-db_session = scoped_session(sessionmaker(autocommit=False,
-                                         autoflush=False,
-                                         bind=engine))
-Base = declarative_base()
+
 login_manager = LoginManager()
 
 app = Flask('grader')
@@ -28,6 +24,11 @@ if 'FACEWORKS_GRADER_CONFIG' in os.environ:
     app.config.from_envvar('FACEWORKS_GRADER_CONFIG')
 
 login_manager.init_app(app)
+engine = create_engine(app.config.get['SQL_URL'], convert_unicode=True)
+db_session = scoped_session(sessionmaker(autocommit=False,
+                                         autoflush=False,
+                                         bind=engine))
+Base = declarative_base()
 # Model Layer #
 
 
