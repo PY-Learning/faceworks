@@ -8,7 +8,7 @@
 
 加入社区请联系群秘书机器人「Wbot」，通过申请后自动邀请进群。群秘书二维码：
 
--- 此处应有二维码 --
+![robot wechat](https://ws2.sinaimg.cn/large/006tNc79gy1fhkg6jfx6rj30uu0zkwgo.jpg)
 
 ## 项目划分
 
